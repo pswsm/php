@@ -264,6 +264,8 @@ greetFriend(); // Prints: Hello, old chum!
 
 ### Objetos
 
+Un interface no pot tenir atributs ni metodes per pot tenir constatns
+
 ```php
 interface Shape {
     /**
@@ -323,5 +325,3 @@ class Square implements Shape {
 
 }
 ```
-
-Un interface no pot tenir atributs ni metodes per pot tenir constatns
