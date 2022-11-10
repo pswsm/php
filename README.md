@@ -323,3 +323,5 @@ class Square implements Shape {
 
 }
 ```
+
+Un interface no pot tenir atributs ni metodes per pot tenir constatns
