@@ -51,6 +51,7 @@ if(filter_has_var(INPUT_POST,"submit")){
 <h3>Current users</h3>
 <ul>
     <?php 
+    // to do read user list from file
     foreach($userlist as $usuario){
         printf("<li>%s</li>",$usuario);
     }
