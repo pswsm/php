@@ -14,4 +14,12 @@ class UserFilePersist {
         $this->filename = $filename;
     }
 
+/**
+ * reada all user for files 
+ * @return array an array of all users reads from files or ???
+ * 
+ */
+    public function readAllUser():array{
+
+    }
 }
