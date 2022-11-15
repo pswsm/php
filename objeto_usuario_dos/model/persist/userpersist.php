@@ -34,7 +34,23 @@ class UserFilePersist {
  */
     public function readAllUser():array{
 // to do
-        return array();
+        $result = array();
+        if (\file_exists($this->filename) && \is_readable($this->filename)) {
+            $handle = \fopen($this->filename, 'r');  //returns false on error.
+            if ($handle!=false) {
+                while (!\feof($handle)) {
+                    $line = trim(\fgets($handle)); // trim elimina los saltos y espacios
+                    if ($line) {
+                        list($key, $value) = \explode($delimiter, $line);
+                        $data["$key"] = (int) $value;
+                    }
+                }
+                \fclose($handle);     
+            }else{
+                $result = array();
+            }
+        }
+        return $result;
     }
 
     /**
