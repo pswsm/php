@@ -1,4 +1,5 @@
 <?php
+require_once 'lib/usuario.php';
 class UserFilePersist {
     private ?string $filename;
 
@@ -15,11 +16,20 @@ class UserFilePersist {
     }
 
 /**
- * reada all user for files 
+ * read all user for files 
  * @return array an array of all users reads from files or ???
  * 
  */
     public function readAllUser():array{
-        
+// to do
+    }
+
+    /**
+ * add user for files 
+ * @return array an array of all users reads from files or ???
+ * 
+ */
+    public function addUser(User $user):bool{
+            // to do
     }
 }
