@@ -1,7 +1,7 @@
 <?php 
 session_start();
-require_once '/model/persist/usuario.php';
-require_once '/model/persist/usurpersist.php';
+require_once 'model/persist/usuario.php';
+require_once 'model/persist/usurpersist.php';
 define("userfile","files/users.txt"); // es como una variable fija
 if(isset($_SESSION['userlist'])){
     $userlist = unserialize($_SESSION['userlist']);
@@ -37,7 +37,7 @@ if(filter_has_var(INPUT_POST,"submit")){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJERCICIO 1</title>
+    <title>EJERCICIO 2</title>
 </head>
 <body>
 <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
@@ -61,6 +61,7 @@ if(filter_has_var(INPUT_POST,"submit")){
 <ul>
     <?php 
     // to do read user list from file
+    $userlist = $user_perisister->readAllUser();
     foreach($userlist as $usuario){
         printf("<li>%s</li>",$usuario);
     }
