@@ -57,5 +57,14 @@ if(filter_has_var(INPUT_POST,"submit")){
         <button type="submit" value ="sent" name="submit">Send</button>
     </div>
 </form>
+<h3>Current users</h3>
+<ul>
+    <?php 
+    foreach($userlist as $usuario){
+        printf("<li>%s</li>",$usuario);
+    }
+    ?>
+</ul>
+<!-- <?php echo $userlist?> -->
 </body>
 </html>
