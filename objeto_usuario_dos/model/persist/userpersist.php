@@ -20,6 +20,6 @@ class UserFilePersist {
  * 
  */
     public function readAllUser():array{
-
+        
     }
 }
