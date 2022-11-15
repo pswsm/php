@@ -4,13 +4,16 @@ $userlist=array();
 include 'lib/usuario.php';
 if(filter_has_var(INPUT_POST,"submit")){
     // reb la variable user del formulari
-    $user = \filter_input(\INPUT_POST, 'username');
+    $username = \filter_input(\INPUT_POST, 'username');
     
     // reb la variable pass del formulare
     $pass = \filter_input(\INPUT_POST, 'password');
+    $user = new User($username,$pass);
+    array_push($userlist,$user);
+    $_SESSION['userlist'] = serialize($userlist);
 
 }else{
-    $user = "";
+    $username = "";
     $pass = "";
 }
 // if(isset($_POST['submit'])){
@@ -36,7 +39,7 @@ if(filter_has_var(INPUT_POST,"submit")){
     <div>
         <label for="">Username</label>
         <div>
-            <input type="text" id="username" name="username" value="<?php echo $user ?>">
+            <input type="text" id="username" name="username" value="<?php echo $username ?>">
         </div>
     </div>
     <div>
