@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     <title>EJERCICIO 1</title>
 </head>
 <body>
-<form action="<?php echo \htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
     <div>
         <label for="">Username</label>
         <div>
