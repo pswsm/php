@@ -1,8 +1,8 @@
 <?php
 class UserFilePersist {
-    private string $filename;
+    private ?string $filename;
 
-    public function __construct($filename){
+    public function __construct(?string $filename=null){
         $this->filename=$filename;
     }
 
