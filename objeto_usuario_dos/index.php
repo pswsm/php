@@ -1,7 +1,8 @@
 <?php 
 session_start();
-require_once 'model/persist/usuario.php';
-require_once 'model/persist/usurpersist.php';
+require_once '/model/persist/usuario.php';
+require_once '/model/persist/usurpersist.php';
+define("userfile","files/users.txt"); // es como una variable fija
 if(isset($_SESSION['userlist'])){
     $userlist = unserialize($_SESSION['userlist']);
 }else{
@@ -17,7 +18,13 @@ if(filter_has_var(INPUT_POST,"submit")){
     array_push($userlist,$user);
     $_SESSION['userlist'] = serialize($userlist);
     // to do save user to file
-    $user_perisister = new UserFilePersist("files/users.txt");
+    $user_perisister = new UserFilePersist("userfile");
+    $added = $user_perisister->addUser($user);
+    if($added){
+        printf("<p>si</p>");
+    }else{
+        printf("<p>no</p>");
+    }
 }else{
     $username = "";
     $pass = "";
