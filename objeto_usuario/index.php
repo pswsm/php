@@ -1,12 +1,11 @@
 <?php 
 session_start();
-
+require_once 'lib/usuario.php';
 if(isset($_SESSION['userlist'])){
     $userlist = unserialize($_SESSION['userlist']);
 }else{
     $userlist=array();
 }
-include 'lib/usuario.php';
 if(filter_has_var(INPUT_POST,"submit")){
     // reb la variable user del formulari
     $username = \filter_input(\INPUT_POST, 'username');
