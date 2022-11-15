@@ -20,14 +20,6 @@ if(filter_has_var(INPUT_POST,"submit")){
     $username = "";
     $pass = "";
 }
-// if(isset($_POST['submit'])){
-//     // reb la variable user del formulari
-//     $user = \filter_input(\INPUT_POST, 'username');
-//     $user = \filter_var($user);
-//     // reb la variable pass del formulare
-//     $pass = \filter_input(\INPUT_POST, 'password');
-//     $pass = \filter_var($pass);
-// }
 ?>
 
 <!DOCTYPE html>
