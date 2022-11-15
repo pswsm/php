@@ -39,10 +39,10 @@ class UserFilePersist {
             $handle = \fopen($this->filename, 'r');  //returns false on error.
             if ($handle!=false) {
                 while (!\feof($handle)) {
-                    $line = trim(\fgets($handle)); // trim elimina los saltos y espacios
-                    if ($line) {
-                        list($key, $value) = \explode($delimiter, $line);
-                        $data["$key"] = (int) $value;
+                    $fields = \fgetcsv($handle,1000,$this->delimiter);
+                    if(count($fields==2)){
+                        $uname = $fields[0];
+                        $pwd = $fields[1];
                     }
                 }
                 \fclose($handle);     
