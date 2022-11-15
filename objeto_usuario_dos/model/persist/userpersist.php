@@ -1,5 +1,5 @@
 <?php
-require_once 'lib/usuario.php';
+require_once 'model/persist/usuario.php';
 class UserFilePersist {
     private ?string $filename;
 
