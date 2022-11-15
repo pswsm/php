@@ -30,13 +30,13 @@ class UserFilePersist {
  * @return array an array of all users reads from files or ???
  * 
  */
-    public function addUser(User $user):bool{
-        $filepath = "files/users.txt";
-        if($filepath == false){
+    public function addUser(User $user,$filename):bool{
+        $this->filename = $filename;
+        if($filename == false){
             return false;
         }else{
             // to do
-            $out = \fopen($filepath,"a");
+            $out = \fopen($filename,"a");
             $write_user = \fprintf($user);
             $cerrar = \fclose($out);
 

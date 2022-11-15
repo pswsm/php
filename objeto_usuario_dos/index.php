@@ -17,7 +17,7 @@ if(filter_has_var(INPUT_POST,"submit")){
     array_push($userlist,$user);
     $_SESSION['userlist'] = serialize($userlist);
     // to do save user to file
-    
+    $user_perisister = new UserFilePersist("files/users.txt");
 }else{
     $username = "";
     $pass = "";
