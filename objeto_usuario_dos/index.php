@@ -1,8 +1,8 @@
 <?php 
 session_start();
 require_once 'model/persist/usuario.php';
-require_once 'model/persist/usurpersist.php';
-define("userfile","files/users.txt"); // es como una variable fija
+require_once 'model/persist/userpersist.php';
+define("USERFILE","files/users.txt"); // es como una variable fija
 if(isset($_SESSION['userlist'])){
     $userlist = unserialize($_SESSION['userlist']);
 }else{
@@ -15,11 +15,8 @@ if(filter_has_var(INPUT_POST,"submit")){
     // reb la variable pass del formulare
     $pass = \filter_input(\INPUT_POST, 'password');
     $user = new User($username,$pass);
-    array_push($userlist,$user);
-    $_SESSION['userlist'] = serialize($userlist);
-    // to do save user to file
-    $user_perisister = new UserFilePersist("userfile");
-    $added = $user_perisister->addUser($user);
+    $user_perisister = new UserFilePersist(USERFILE,";");
+    $added = $user_perisister->addUser($user,USERFILE);
     if($added){
         printf("<p>si</p>");
     }else{
@@ -62,6 +59,7 @@ if(filter_has_var(INPUT_POST,"submit")){
     <?php 
     // to do read user list from file
     $userlist = $user_perisister->readAllUser();
+    echo "tienes".count($userlist)."usuarios";
     foreach($userlist as $usuario){
         printf("<li>%s</li>",$usuario);
     }

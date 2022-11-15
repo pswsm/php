@@ -2,9 +2,11 @@
 require_once 'model/persist/usuario.php';
 class UserFilePersist {
     private ?string $filename;
+    private ?string $delimiter;
 
-    public function __construct(?string $filename=null){
+    public function __construct(?string $filename=null,?string $delimiter=null){
         $this->filename=$filename;
+        $this->delimiter=$delimiter;
     }
 
     public function getfilename(){
@@ -30,16 +32,10 @@ class UserFilePersist {
  * @return array an array of all users reads from files or ???
  * 
  */
-    public function addUser(User $user,$filename):bool{
-        $this->filename = $filename;
-        if($filename == false){
-            return false;
-        }else{
-            // to do
-            $out = \fopen($filename,"a");
-            $write_user = \fprintf($user);
-            $cerrar = \fclose($out);
+    public function addUser(User $user):bool{
+        $result = false;
 
-            return true;}
+        return $result;
+        
     }
 }
