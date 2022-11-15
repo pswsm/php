@@ -47,7 +47,7 @@ class UserFilePersist {
         if (\file_exists($this->$filename) && \is_writeable($this->$filename)) {
             $handle = \fopen($filename, 'a');
             if($handle!=false){
-                
+                fprintf($hande,"%s%s%s\n",$user->get_username(),$this->$delimiter,$user->getpassword());
             }
         }
 
