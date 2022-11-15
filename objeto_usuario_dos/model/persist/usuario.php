@@ -10,11 +10,11 @@ class User{
     }
 
     public function getusername(){
-        return $this->$username;
+        return $this->username;
     }
 
     public function getpassword(){
-        return $this->$password;
+        return $this->password;
     }
 
     public function setusername($username) {

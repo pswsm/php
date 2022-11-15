@@ -44,10 +44,12 @@ class UserFilePersist {
  */
     public function addUser(User $user):bool{
         $result = false;
-        if (\file_exists($this->$filename) && \is_writeable($this->$filename)) {
-            $handle = \fopen($filename, 'a');
+        if (\file_exists($this->filename) && \is_writeable($this->filename)) {
+            $handle = \fopen($this->filename, 'a');
             if($handle!=false){
-                fprintf($hande,"%s%s%s\n",$user->get_username(),$this->$delimiter,$user->getpassword());
+                \fprintf($handle,"%s%s%s\n",$user->getusername(),$this->delimiter,$user->getpassword());
+                $result = true;
+                \fclose($handle);
             }
         }
 
