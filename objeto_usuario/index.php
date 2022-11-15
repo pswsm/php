@@ -1,14 +1,25 @@
 <?php session_start();
 include 'lib/usuario.php';
+if(filter_has_var(INPUT_POST,"submit")){
+    // reb la variable user del formulari
+    $user = \filter_input(\INPUT_POST, 'username');
+    
+    // reb la variable pass del formulare
+    $pass = \filter_input(\INPUT_POST, 'password');
+
+}else{
+    $user = "";
+    $pass = "";
+}
 if(isset($_POST['submit'])){
     
 
     // reb la variable user del formulari
-    $user = \filter_input(\INPUT_POST, 'user');
+    $user = \filter_input(\INPUT_POST, 'username');
     $user = \filter_var($user);
 
     // reb la variable pass del formulare
-    $pass = \filter_input(\INPUT_POST, 'pass');
+    $pass = \filter_input(\INPUT_POST, 'password');
     $pass = \filter_var($pass);
 
 
