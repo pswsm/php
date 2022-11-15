@@ -28,13 +28,13 @@ if(isset($_POST['submit'])){
     <div>
         <label for="">Username</label>
         <div>
-            <input type="text" >
+            <input type="text" id="username" name="username" >
         </div>
     </div>
     <div>
         <label for="">Password</label>
         <div>
-            <input type="text" >
+            <input type="text" id="password" name="password">
         </div>
     </div>
 </form>
