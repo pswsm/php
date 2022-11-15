@@ -37,6 +37,9 @@ if(isset($_POST['submit'])){
             <input type="text" id="password" name="password">
         </div>
     </div>
+    <div>
+        <button type="submit" value ="sent" name="submit"></button>
+    </div>
 </form>
 </body>
 </html>
