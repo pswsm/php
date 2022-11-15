@@ -45,7 +45,7 @@ if(filter_has_var(INPUT_POST,"submit")){
     <div>
         <label for="">Password</label>
         <div>
-            <input type="text" id="password" name="password" value="<?php echo $user ?>">
+            <input type="text" id="password" name="password" value="<?php echo $pass ?>">
         </div>
     </div>
     <div>
