@@ -17,7 +17,17 @@ class UserFilePersist {
         $this->filename = $filename;
     }
 
-/**
+    public function getdelimiter(){
+        return $this->$delimiter;
+    }
+
+    public function setdelimiter($delimiter) {
+        $this->delimiter = $delimiter;
+    }
+
+
+
+    /**
  * read all user for files 
  * @return array an array of all users reads from files or ???
  * 
@@ -34,6 +44,12 @@ class UserFilePersist {
  */
     public function addUser(User $user):bool{
         $result = false;
+        if (\file_exists($this->$filename) && \is_writeable($this->$filename)) {
+            $handle = \fopen($filename, 'a');
+            if($handle!=false){
+                
+            }
+        }
 
         return $result;
         
